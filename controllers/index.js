@@ -23,3 +23,5 @@ router.get('/', async (req, res) => {
             loggedIn: req.session.loggedIn
         });
     });
+
+    module.exports = router;
