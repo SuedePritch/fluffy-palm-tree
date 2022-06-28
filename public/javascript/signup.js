@@ -1,5 +1,6 @@
-function signup() {
+const signup = async () => {
     const username = document.getElementById("username-signup").value.trim();
+    const email = document.getElementById("email-signup").value.trim();
     const password = document.getElementById("password-signup").value.trim();
 
     if (username && password) {
@@ -7,6 +8,7 @@ function signup() {
             method: 'POST',
             body: JSON.stringify({
                 username,
+                email,
                 password
             }),
             headers: {

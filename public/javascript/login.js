@@ -1,12 +1,12 @@
-function login() {
-    const username = document.getElementById("username-login").value.trim();
+const login = async () => {
+    const email = document.getElementById("email-login").value.trim();
     const password = document.getElementById("password-login").value.trim();
-
-    if (username && password) {
+    
+    if (email && password) {
         const response = await fetch('/api/user/login', {
             method: 'POST',
             body: JSON.stringify({
-                username,
+                email,
                 password
             }),
             headers: {
@@ -14,7 +14,8 @@ function login() {
             }
         });
         if (response.ok) {
-            document.location.replace('/');
+            console.log('logged in');
+            // document.location.replace('/');
         } else {
             alert(response.statusText);
         }
