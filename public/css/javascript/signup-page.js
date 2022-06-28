@@ -4,7 +4,7 @@ function signup() {
 
     if (username && password) {
         const response = await fetch('/api/user/signup', {
-            method: 'Post',
+            method: 'POST',
             body: JSON.stringify({
                 username,
                 password
