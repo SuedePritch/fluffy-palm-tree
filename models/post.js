@@ -1,6 +1,5 @@
-const { stubFalse } = require("lodash");
-const { Model, DataTypes } = require("sequelize/types")
-const sequelize = require('../config/connections');
+const { Model, DataTypes } = require("sequelize")
+const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
