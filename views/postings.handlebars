@@ -1,3 +1,13 @@
-<section>
-    
+<section class="card-container single-post">
+    {{#each posts as |post}}
+    <a class="card" href="/singlepost/{{post.id}}">
+        <div class="title"  id={{post.id}}>
+            <p id="title-text">{{post.title}}</p>
+            <p id="username-text">{{post.user.username}}</p>
+            <p id="rate-text">{{post.rate}}</p>
+        </div>
+        <p class="content"  id={{post.id}} >{{post.content}}</p>
+    </a>
 </section>
+
+<script src=""
