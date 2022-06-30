@@ -2,24 +2,36 @@ const { Post } = require('../models')
 
 const postData = [
     {
-    "title": "NodeJS",
-    "content": "Lorem ipsum",
-    "user_id": 1
+    "user_id": 1,
+    "name": "Robert Nicostratus",
+    "job": "fullstack",
+    "tech": "React Js",
+    "price": 75,
+    "description": "I am the first person, and I do all parts of code."
     },
     {
-    "title": "Javascript",
-    "content": "Lorem ipsum",
     "user_id": 2,
+    "name": "Phaedra Domna",
+    "job": "design",
+    "tech": "CSS",
+    "price": 45,
+    "description": "I am the second person, and I do design."
     },
     {
-    "title": "MERN",
-    "content": "Lorem ipsum",
-    "user_id": 3,
+        "user_id": 3,
+        "name": "Deodatus Rajeev",
+        "job": "Front End",
+        "tech": "Vue",
+        "price": 55,
+        "description": "I am the third person, and I do front end jobs."
     },
     {
-    "title": "Express",
-    "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dolorum molestiae nemo, soluta doloribus nisi doloremque sapiente! Eius quibusdam enim hic nam, architecto iusto temporibus?",
-    "user_id": 3,
+        "user_id": 4,
+        "name": "Manlio Krishna",
+        "job": "Back End",
+        "tech": "Node Js",
+        "price": 65,
+        "description": "I am the forth person, and I do back end jobs."
     }
 ];
 const seedPosts = () => Post.bulkCreate(postData);
