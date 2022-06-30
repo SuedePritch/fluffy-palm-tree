@@ -25,10 +25,6 @@ Post.init({
         type: DataTypes.STRING,
         allowNull: false
     },
-    tech_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
     price: {
         type: DataTypes.INTEGER,
         allowNull: false
