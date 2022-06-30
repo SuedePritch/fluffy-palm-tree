@@ -16,7 +16,7 @@ const signup = async () => {
             }
         });
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/postings');
         } else {
             alert(response.statusText);
         }
