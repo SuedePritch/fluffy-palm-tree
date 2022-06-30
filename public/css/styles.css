@@ -92,14 +92,16 @@ a{
 }
 #title-text{
     color: var(--clr-primary-500);
-
 }
 .card .date{
     color: var(--clr-light);
 }
-.card .content{
+.card .content-text{
     padding: 0.5rem 1rem;
-    padding-bottom: 3rem;
-
+    color: var(--clr-light);
 }
+#tech-text{
+    color: aqua;
+}
+
 

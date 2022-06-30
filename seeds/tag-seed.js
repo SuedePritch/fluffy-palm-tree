@@ -2,29 +2,48 @@ const { Tag } = require('../models');
 
 const tagData = [
   {
-    tech_name: 'rock music',
+    tech_name: 'Javascript',
   },
   {
-    tech_name: 'pop music',
+    tech_name: 'NodeJs',
   },
   {
-    tech_name: 'blue',
+    tech_name: 'SQL',
   },
   {
-    tech_name: 'red',
+    tech_name: 'MongoDB',
   },
   {
-    tech_name: 'green',
+    tech_name: 'Python',
   },
   {
-    tech_name: 'white',
+    tech_name: 'Django',
   },
   {
-    tech_name: 'gold',
+    tech_name: 'Flask',
   },
   {
-    tech_name: 'pop culture',
+    tech_name: 'PHP',
   },
+  {
+    tech_name: 'Apache',
+  },
+  {
+    tech_name: 'AWS',
+  },
+  {
+    tech_name: 'Docker',
+  },
+  {
+    tech_name: '.Net',
+  },
+  {
+    tech_name: 'C++',
+  },
+  {
+    tech_name: 'COBOL',
+  },
+  
 ];
 
 const seedTags = () => Tag.bulkCreate(tagData);

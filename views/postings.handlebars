@@ -2,11 +2,16 @@
     {{#each posts as |post|}}
     <a class="card" href="">
         <div class="title"  id={{post.id}}>
-            <p id="title-text">{{post.title}}</p>
-            <p id="username-text">{{post.user.username}}</p>
-            <p id="rate-text">{{post.rate}}</p>
+            <p id="title-text">{{post.name}}</p>
+            <p id="job-text">{{post.job}}</p>
+
         </div>
-        <p class="content"  id={{post.id}} >{{post.content}}</p>
+            <p class="content-text" id="desc-text">{{post.description}}</p>
+            {{#each tags as |tag|}}
+            <p class="content-text" id="tech-text">{{tag.tech_name}}</p>
+            {{/each}}
+            {{!-- <p id="username-text">{{post.user.username}}</p> --}}
+            <p class="content-text" id="rate-text">${{post.price}}</p>
     </a>
     {{/each}}
 </div>
