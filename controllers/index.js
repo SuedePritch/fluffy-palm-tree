@@ -17,7 +17,7 @@ router.get('/postings', async (req, res) => {
         },
         {   
             model: Tag,
-            attributes: ['tech_name'],
+            attributes: ['tech_name']
         },
 
     ]

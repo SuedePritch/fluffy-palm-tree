@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
       const newPostData = await Post.create({
         name: req.body.name,
         job: req.body.job,
-        tech: req.body.tech,
+        tech_id: req.body.tech_id,
         price: req.body.price,
         description: req.body.description,
         user_id: req.session.userId,
