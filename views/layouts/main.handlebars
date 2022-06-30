@@ -6,22 +6,21 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <div class="main-header">
-        <h1>Brandname</h1>
-        <div id="Header">
-            <nav class="Brandname-nav">
-                <div class="sign-up-or-log-in">
-                    {{#if loggedIn}}
-                    <a href="/dashboard">Dashboard</a>
-                    <button id="logout">Logout</button>
-                    {{else}}
-                    <a href="/login" class="log-in-button">Login</a>
-                    <a href="/signup" class="sign-up-button" >Sign Up</a>
-                    {{/if}}
-                </div>
-            </nav>
+    <nav>
+        <div class="navlinks">
+            <img src="/images/logo.png" id="logo-image" alt="Isocahedron Logo">
+            <h2 id="logo-title">GoldenDevs</h2>
+            <div class="navlink">
+                <a href="/postings">Home</a>
+                {{#if loggedIn}}
+                <a href="/" id="logout">Logout</a>
+                {{else}}
+                <a href="/login">Login</a>
+                <a href="/signup">Sign Up</a>
+                {{/if}}
+            </div>
         </div>
-    </div>
+    </nav>
     <main>
         {{{body}}}
     </main>
