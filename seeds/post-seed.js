@@ -5,7 +5,7 @@ const postData = [
     "user_id": 1,
     "name": "Robert Nicostratus",
     "job": "fullstack",
-    "tech": "React Js",
+    "tech_id": 1,
     "price": 75,
     "description": "I am the first person, and I do all parts of code."
     },
@@ -13,7 +13,7 @@ const postData = [
     "user_id": 2,
     "name": "Phaedra Domna",
     "job": "design",
-    "tech": "CSS",
+    "tech_id": 1,
     "price": 45,
     "description": "I am the second person, and I do design."
     },
@@ -21,7 +21,7 @@ const postData = [
         "user_id": 3,
         "name": "Deodatus Rajeev",
         "job": "Front End",
-        "tech": "Vue",
+        "tech_id": 1,
         "price": 55,
         "description": "I am the third person, and I do front end jobs."
     },
@@ -29,7 +29,7 @@ const postData = [
         "user_id": 4,
         "name": "Manlio Krishna",
         "job": "Back End",
-        "tech": "Node Js",
+        "tech_id": 1,
         "price": 65,
         "description": "I am the forth person, and I do back end jobs."
     }

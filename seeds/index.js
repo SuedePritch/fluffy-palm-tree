@@ -2,7 +2,8 @@ const sequelize = require('../config/connection');
 const seedPosts = require('./post-seed')
 const seedUsers = require('./user-seed')
 const seedComments = require('./comment-seed')
-
+const seedTags = require('./tag-seed');
+const seedTechTags = require('./techTag-seed');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
@@ -20,6 +21,10 @@ const seedDatabase = async () => {
     console.log("🚀 ---------------------------------------------------------🚀")
     console.log("🚀 ~ file: index.js ~ line 23 ~ seedComments", seedComments)
     console.log("🚀 ---------------------------------------------------------🚀")
+
+    await seedTags();
+
+    await seedTechTags();
     
     process.exit(0);
 };
