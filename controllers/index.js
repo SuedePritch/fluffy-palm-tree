@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Post, User} = require('../models/');
+const {Post, User, Tag} = require('../models/');
 const apiRoutes = require('./api');
 router.use('/api', apiRoutes);
 
@@ -14,6 +14,10 @@ router.get('/postings', async (req, res) => {
             model: User,
             attributes: ['username'], 
         },
+        {   
+            model: Tag,
+            attributes: ['tech_name'],
+        },
 
     ]
     }).catch((err) => { 
@@ -21,6 +25,7 @@ router.get('/postings', async (req, res) => {
         res.json(err);
     });
     const posts = postData.map((post) => post.get({ plain: true }));
+    // res.status(200).json(postData);
         res.render('postings', { 
             posts, 
             loggedIn: req.session.loggedIn
