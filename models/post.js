@@ -17,11 +17,23 @@ Post.init({
             key: 'id'
         }
     },
-    title: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    post_text: {
+    job: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    tech: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    price: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    description: {
         type: DataTypes.STRING,
         allowNull: true
     },
