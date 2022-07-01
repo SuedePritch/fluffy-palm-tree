@@ -4,38 +4,34 @@ const postData = [
     {
     "user_id": 1,
     "name": "Robert Nicostratus",
-    "job": "fullstack",
-    // "tech_id": 1,
-    "skillsChosen": [1,2,3],
+    "job": "Fullstack",
     "price": 75,
-    "description": "I am the first person, and I do all parts of code."
+    "description": "I am a full stack dev using the MERN and PERN stack",
+    "profile": "http://jamespritchard.netlify.app",
     },
     {
     "user_id": 2,
     "name": "Phaedra Domna",
-    "job": "design",
-    // "tech_id": 1,
-    "skillsChosen": [1,2,3],
+    "job": "Design",
     "price": 45,
-    "description": "I am the second person, and I do design."
+    "description": "Professional Graphic Designer",
+    "profile": "http://jamespritchard.netlify.app"
     },
     {
-        "user_id": 3,
-        "name": "Deodatus Rajeev",
-        "job": "Front End",
-        // "tech_id": 1,
-        "skillsChosen": [1,2,3],
-        "price": 55,
-        "description": "I am the third person, and I do front end jobs."
+    "user_id": 3,
+    "name": "Deodatus Rajeev",
+    "job": "Front End",
+    "price": 55,
+    "description": "I can handle any Javascript Frontend",
+    "profile": "http://jamespritchard.netlify.app"
     },
     {
-        "user_id": 4,
-        "name": "Manlio Krishna",
-        "job": "Back End",
-        // "tech_id": 1,
-        "skillsChosen": [1,2,3],
-        "price": 65,
-        "description": "I am the forth person, and I do back end jobs."
+    "user_id": 4,
+    "name": "Manlio Krishna",
+    "job": "Fullstack",
+    "price": 65,
+    "description": "I'm Manlio and i specialize in the LAMP stack",
+    "profile": "http://jamespritchard.netlify.app"
     }
 ];
 const seedPosts = () => Post.bulkCreate(postData);

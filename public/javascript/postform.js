@@ -5,6 +5,7 @@ const login = async (event) => {
     const tech = document.getElementById("tech").value;
     const price = document.getElementById("price").value;
     const description = document.getElementById("description").value;
+    const profile = document.getElementById("profile").value;
     const response = await fetch('/api/user/postform', {
             method: 'POST',
             body: JSON.stringify({
@@ -13,6 +14,7 @@ const login = async (event) => {
                 tech:tech,
                 price:price,
                 description:description,
+                profile:profile,
             }),
             headers: {
                 'Content-Type': 'application/json'

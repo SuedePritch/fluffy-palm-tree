@@ -1,4 +1,5 @@
-const signup = async () => {
+const signup = async (event) => {
+    event.preventDefault();
     const username = document.getElementById("username-signup").value.trim();
     const email = document.getElementById("email-signup").value.trim();
     const password = document.getElementById("password-signup").value.trim();
