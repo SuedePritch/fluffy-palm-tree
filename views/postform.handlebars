@@ -2,12 +2,22 @@
     <form class="form" id="post-form">
             <input type="text" id="name" placeholder="Name Here!" />
             <input type="text" id="job" placeholder="Job Here!" />
-            <input type="text" id="tech" placeholder="Tech Here!" />
             <input type="text" id="price" placeholder="Price Here!" />
             <input type="text" id="description" placeholder="Description Here!" />
             <input type="text" id="profile" placeholder="Full Profile URL" />
-            <button type="submit" class="add class">Post!</button>
+
+            <fieldset id="skills-list">
+                {{#each tags as |tag|}}
+                    <div id="radio-group">
+                        <input type="checkbox" name="skills-list" value={{tag.id}}>
+                        <img src={{tag.tech_icon}} id="tech-icon-large">
+                    </div>
+                {{/each}}
+            </fieldset>
+            
+            <button type="submit">Post!</button>
     </form>
+    <a href="/postform">New Post</a>
 </div>
 
 <script src="/javascript/postform.js"></script>

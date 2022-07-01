@@ -8,7 +8,7 @@ router.use('/api', apiRoutes);
 router.get('/', async (req, res) => {res.render('landing',{loggedIn: req.session.loggedIn})});
 router.get('/signup', async (req, res) => {res.render('signup',{loggedIn: req.session.loggedIn});});
 router.get('/login', async (req, res) => {res.render('login',{loggedIn: req.session.loggedIn});});
-router.get('/postform',withAuth, async (req, res) => {res.render('postform',{loggedIn: req.session.loggedIn});});
+
 
 router.get('/postings', async (req, res) => {
     const postData = await Post.findAll({
@@ -35,4 +35,19 @@ router.get('/postings', async (req, res) => {
         });
     });
 
+
+
+    router.get('/postform', async (req, res) => {
+        const tagData = await Tag.findAll({
+        }).catch((err) => { 
+            
+            res.json(err);
+        });
+        const tags = tagData.map((tag) => tag.get({ plain: true }));
+        // res.status(200).json(tagData);
+            res.render('postform', { 
+                tags, 
+                loggedIn: req.session.loggedIn
+            });
+    });
 module.exports = router;

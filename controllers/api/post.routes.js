@@ -3,7 +3,7 @@ const {Post, TechTag} = require('../../models/');
 const withAuth = require('../../utils/auth')
 
 //NEW POST
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const newPostData = await Post.create({
             name: req.body.name,
@@ -25,6 +25,7 @@ router.post('/', withAuth, async (req, res) => {
         }
         })
         .then((skillTagIds) => 
+
         res.render('postings', { 
             loggedIn: req.session.loggedIn
         }))
