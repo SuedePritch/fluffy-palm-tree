@@ -33,6 +33,10 @@ Post.init({
         type: DataTypes.STRING,
         allowNull: true
     },
+    profile: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
 },  {
         sequelize,
         freezeTableName: true,

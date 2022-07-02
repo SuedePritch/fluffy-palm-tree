@@ -1,16 +1,17 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const User = require('../../models/User')
+// const withAuth = require('../../utils/auth')
 
 //GET ALL USERS
-router.get('/', async (req, res) => {
-    const userData = await User.findAll().catch((err) => { 
-        res.json(err);
-    });
-        const users = userData.map((user) => user.get({ plain: true }));
-      // res.status(200).json(userData)
-        res.render('homepage', { users });
-    });
+// router.get('/', withAuth, async (req, res) => {
+//     const userData = await User.findAll().catch((err) => { 
+//         res.json(err);
+//     });
+//         const users = userData.map((user) => user.get({ plain: true }));
+//       // res.status(200).json(userData)
+//         res.render('homepage', { users });
+//     });
 
 
 
@@ -24,9 +25,9 @@ router.post('/signup', async (req, res) => {
     });
     req.session.save(() => {
         req.session.loggedIn = true;
-
-        res.status(200).json(signupData);
-    });
+        res.status(200).json('You are now signed up!');
+        
+    })
     } catch (err) {
     console.log(err);
     res.status(400).json(err);

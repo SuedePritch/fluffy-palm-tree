@@ -1,17 +1,20 @@
 <div class="container card-container">
+    <a href="/postform" id="new-post-button">NEW POST</a>
     {{#each posts as |post|}}
-    <a class="card" href="">
+    <a class="card" target="_blank" href={{post.profile}}>
         <div class="title"  id={{post.id}}>
             <p id="title-text">{{post.name}}</p>
             <p id="job-text">{{post.job}}</p>
 
         </div>
-            <p class="content-text" id="desc-text">{{post.description}}</p>
-            {{#each tags as |tag|}}
-            <p class="content-text" id="tech-text">{{tag.tech_name}}</p>
-            {{/each}}
-            {{!-- <p id="username-text">{{post.user.username}}</p> --}}
-            <p class="content-text" id="rate-text">${{post.price}}</p>
+                <p class="content-text" id="desc-text">{{post.description}}</p>
+            <div class="tech-container">
+                {{#each tags as |tag|}}
+                <img src={{tag.tech_icon}} id="tech-icon">
+                {{/each}}
+            </div>
+                {{!-- <p id="username-text">{{post.user.username}}</p> --}}
+                <p class="content-text" id="rate-text">${{post.price}}</p>
     </a>
     {{/each}}
 </div>

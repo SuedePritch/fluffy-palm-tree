@@ -14,6 +14,9 @@ Tag.init(
     },
     tech_name: {
       type: DataTypes.STRING
+    },
+    tech_icon: {
+      type: DataTypes.STRING
     }
   },
   {

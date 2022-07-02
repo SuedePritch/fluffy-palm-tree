@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const {Post, TechTag} = require('../../models/');
+const withAuth = require('../../utils/auth')
 
 //NEW POST
 router.post('/', async (req, res) => {
@@ -9,10 +10,10 @@ router.post('/', async (req, res) => {
             job: req.body.job,
             price: req.body.price,
             description: req.body.description,
+            profile: req.body.profile,
             skillsChosen: req.body.skillsChosen,//This is array of chosen skills  Javascript/NodeJS etc
             user_id: req.session.userId,
         }).then((skills) => {
-        // if there's product tags, we need to create pairings to bulk create in the ProductTag model
         if (req.body.skillsChosen && req.body.skillsChosen.length) {
             const techTagIdArr = req.body.skillsChosen.map((chosen) => {
                 return {
@@ -22,12 +23,10 @@ router.post('/', async (req, res) => {
             });
             return TechTag.bulkCreate(techTagIdArr);
         }
-        // if no product tags, just respond
         })
         .then((skillTagIds) => 
+
         res.render('postings', { 
-            skills,
-            
             loggedIn: req.session.loggedIn
         }))
     } catch (err) {
