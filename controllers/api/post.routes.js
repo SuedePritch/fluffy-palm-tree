@@ -3,7 +3,7 @@ const {Post, TechTag} = require('../../models/');
 const withAuth = require('../../utils/auth')
 
 //NEW POST
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newPostData = await Post.create({
             name: req.body.name,
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
         })
         .then((skillTagIds) => 
 
-        res.render('postings', { 
+        res.render('dashboard', { 
             loggedIn: req.session.loggedIn
         }))
     } catch (err) {
@@ -34,5 +34,23 @@ router.post('/', async (req, res) => {
         res.status(400).json(err);
     }
 });
+
+
+// DELETE POST
+router.delete('/:id', async (req, res) => {
+    try {
+        const deletePost = await Post.destroy({where: 
+            { 
+                id: req.params.id 
+            }})
+        res.status(200).json(deletePost)
+
+    } catch (err) {
+        console.log(err);
+        res.status(400).json(err);
+    }
+});
+
+
 
     module.exports = router;

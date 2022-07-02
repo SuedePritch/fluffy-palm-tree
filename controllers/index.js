@@ -8,6 +8,34 @@ router.use('/api', apiRoutes);
 router.get('/', async (req, res) => {res.render('landing',{loggedIn: req.session.loggedIn})});
 router.get('/signup', async (req, res) => {res.render('signup',{loggedIn: req.session.loggedIn});});
 router.get('/login', async (req, res) => {res.render('login',{loggedIn: req.session.loggedIn});});
+router.get('/dashboard', withAuth, async (req, res) => {
+    try {
+    const allUserPostsData = await Post.findAll({
+        where:{
+            user_id: req.session.userId
+        },
+        include: [    
+            {   
+                model: User,
+                attributes: ['username'], 
+            },
+            {   
+                model: Tag,
+                attributes: ['tech_name', 'tech_icon']
+            }
+        ]
+    })
+    
+    const allUsersPosts = allUserPostsData.map((post) => post.get({ plain: true }));
+    // res.status(200).json(allUsersPosts);
+    res.render('dashboard', {
+        allUsersPosts,
+        loggedIn: req.session.loggedIn
+    })
+    } catch (err) {
+    res.status(500).json(err);
+    }
+});
 
 
 router.get('/postings', async (req, res) => {
@@ -37,7 +65,7 @@ router.get('/postings', async (req, res) => {
 
 
 
-    router.get('/postform', async (req, res) => {
+    router.get('/postform', withAuth, async (req, res) => {
         const tagData = await Tag.findAll({
         }).catch((err) => { 
             

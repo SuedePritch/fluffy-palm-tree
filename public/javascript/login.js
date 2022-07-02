@@ -13,7 +13,7 @@ const login = async (event) => {
             }
         });
         if (response.ok) {
-            document.location.replace('/postings');
+            document.location.replace('/dashboard');
         } else {
             alert(response.statusText);
         }
