@@ -1,5 +1,5 @@
 const User = require('./user');
-const Post = require('./Post');
+const Post = require('./post');
 const Comment = require('./comment');
 const TechTag = require('./TechTag');
 const Tag = require('./Tag');
