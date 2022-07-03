@@ -3,14 +3,16 @@ const signup = async (event) => {
     const username = document.getElementById("username-signup").value.trim();
     const email = document.getElementById("email-signup").value.trim();
     const password = document.getElementById("password-signup").value.trim();
-
+    const isDevOptions = document.querySelectorAll('input[name="isDev"]:checked')
+    const isDev = JSON.parse(isDevOptions[0].value)
     if (username && password) {
         const response = await fetch('/api/user/signup', {
             method: 'POST',
             body: JSON.stringify({
                 username,
                 email,
-                password
+                password,
+                isDev
             }),
             headers: {
                 'Content-Type': 'application/json'

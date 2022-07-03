@@ -22,6 +22,7 @@ router.post('/signup', async (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
+        isDev: req.body.isDev
     });
     req.session.save(() => {
         req.session.loggedIn = true;

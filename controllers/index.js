@@ -43,7 +43,7 @@ router.get('/postings', async (req, res) => {
         include: [    
         {   
             model: User,
-            attributes: ['username'], 
+            attributes: ['isDev'], 
         },
         {   
             model: Tag,
