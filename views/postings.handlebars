@@ -1,5 +1,7 @@
 <div class="container card-container">
-    <a href="/postform" id="new-post-button">NEW POST</a>
+    <a href="/postform" id="new-post-button">
+    <svg id="add-button" width="30" height="30" viewBox="0 0 264 264" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M43.6116 8.25632C33.8485 -1.50679 18.0194 -1.50679 8.25631 8.25632C-1.50679 18.0194 -1.50679 33.8486 8.25631 43.6117L96.6447 132L8.25631 220.388C-1.5068 230.151 -1.50679 245.981 8.25631 255.744C18.0194 265.507 33.8485 265.507 43.6116 255.744L132 167.355L220.388 255.744C230.151 265.507 245.981 265.507 255.744 255.744C265.507 245.981 265.507 230.151 255.744 220.388L167.355 132L255.744 43.6117C265.507 33.8485 265.507 18.0194 255.744 8.25632C245.981 -1.50679 230.151 -1.5068 220.388 8.25632L132 96.6447L43.6116 8.25632Z" fill="black"/></svg>
+    </a>
     {{#each posts as |post|}}
     <a class="card" target="_blank" href={{post.profile}}>
         <div class="title"  id={{post.id}}>
