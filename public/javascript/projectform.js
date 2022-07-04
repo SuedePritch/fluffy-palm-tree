@@ -18,7 +18,7 @@ const project = async (event) => {
             }
         });
         if (response.ok) {
-            document.location.replace('/postings');
+            document.location.replace('/clientdashboard');
         } else {
             alert(response.statusText);
         }

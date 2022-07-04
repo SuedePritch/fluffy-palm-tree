@@ -44,7 +44,7 @@ router.post('/project', async (req, res) => {
             deadline: req.body.deadline,
             user_id: req.session.userId,
         })
-       res.status(200).json(newProjectData)
+        res.status(200).json(newProjectData)
         // res.render('dashboard', { 
         //     loggedIn: req.session.loggedIn
     // })
