@@ -13,7 +13,9 @@ User.hasMany(Comment, {
     foreignKey: 'user_id'
 });
 
-User.hasMany(Project);
+User.hasMany(Project, {
+    foreignKey: 'user_id'
+});
 
 Post.hasMany(Comment, {
     foreignKey: 'post_id'
@@ -43,6 +45,20 @@ Post.belongsToMany(Tag, {
 Tag.belongsToMany(Post, {
     through: TechTag,
     foreignKey: 'tag_id'
+});
+
+// Project.belongsToMany(Tag, {
+//     through: TechTag,
+//     foreignKey: 'tech_id'
+// });
+
+// Tag.belongsToMany(Project, {
+//     through: TechTag,
+//     foreignKey: 'tag_id'
+// });
+
+Project.belongsTo(User, {
+    foreignKey: 'user_id'
 });
 
 module.exports = {User, Post, Comment, Tag, TechTag, Project};
