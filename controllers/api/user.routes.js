@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
         req.session.loggedIn = true;
         req.session.userId = loginAttempt.id
 
-        res.status(200).json({ user: loginAttempt, message: 'You are now logged in!' });
+        res.status(200).json(loginAttempt);
     });
     } catch (err) {
     res.status(500).json(err);
@@ -71,7 +71,7 @@ router.post('/logout', (req, res) => {
   // When the user logs out, destroy the session
     if (req.session.loggedIn) {
     req.session.destroy(() => {
-        res.status(204).end();
+        res.status(200).json('logged out')
     });
     } else {
     res.status(404).end();
