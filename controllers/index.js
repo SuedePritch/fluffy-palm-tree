@@ -8,6 +8,8 @@ router.use('/api', apiRoutes);
 router.get('/', async (req, res) => {res.render('landing',{loggedIn: req.session.loggedIn})});
 router.get('/signup', async (req, res) => {res.render('signup',{loggedIn: req.session.loggedIn});});
 router.get('/login', async (req, res) => {res.render('login',{loggedIn: req.session.loggedIn});});
+router.get('/projectform', async (req, res) => {res.render('projectform',{loggedIn: req.session.loggedIn});});
+
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
     const allUserPostsData = await Post.findAll({
