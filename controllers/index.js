@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Post, User, Tag} = require('../models/');
+const {Post, User, Tag, Project} = require('../models/');
 const withAuth = require('../utils/auth')
 
 const apiRoutes = require('./api');
@@ -39,19 +39,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 
 router.get('/postings', async (req, res) => {
-    const postData = await Post.findAll({
-        include: [    
-        {   
-            model: User,
-            attributes: ['isDev'], 
-        },
-        {   
-            model: Tag,
-            attributes: ['tech_name', 'tech_icon']
-        },
-
-    ]
-    }).catch((err) => { 
+    const postData = await Post.findAll({include: [   {   model: User,attributes: ['isDev'], },{  model: Tag,attributes: ['tech_name', 'tech_icon'] },],})
+    .catch((err) => { 
         
         res.json(err);
     });
@@ -63,6 +52,19 @@ router.get('/postings', async (req, res) => {
         });
     });
 
+    router.get('/project', async (req, res) => {
+        const projectData = await Project.findAll({include: [   {   model: User,attributes: ['isDev'], },],})
+        .catch((err) => { 
+            
+            res.json(err);
+        });
+        const projects = projectData.map((project) => project.get({ plain: true }));
+        // res.status(200).json(postData);
+            res.render('project', { 
+                projects,
+                loggedIn: req.session.loggedIn
+            });
+        });
 
 
     router.get('/postform', withAuth, async (req, res) => {

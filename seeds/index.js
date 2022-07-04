@@ -4,6 +4,7 @@ const seedUsers = require('./user-seed')
 const seedComments = require('./comment-seed')
 const seedTags = require('./tag-seed');
 const seedTechTags = require('./techTag-seed');
+const seedProjects = require('./project-seed');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
@@ -26,6 +27,8 @@ const seedDatabase = async () => {
 
     await seedTechTags();
     
+    await seedProjects();
+
     process.exit(0);
 };
 
