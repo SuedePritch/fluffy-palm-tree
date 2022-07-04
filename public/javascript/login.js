@@ -10,10 +10,21 @@ const login = async (event) => {
             }),
             headers: {
                 'Content-Type': 'application/json'
-            }
-        });
+            },
+            
+        })
+        // Grabs response object
+        const isDeveloperHelper = await response.json();
+        //Grabs isDev from response object
+        const isDev = isDeveloperHelper.isDev
+
+
         if (response.ok) {
-            document.location.replace('/dashboard');
+            if(isDev){
+                document.location.replace('/project');
+            }else{
+                document.location.replace('/postings');
+            }
         } else {
             alert('log in failed!');
         }
