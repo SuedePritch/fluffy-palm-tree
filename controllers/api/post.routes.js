@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Post, TechTag} = require('../../models/');
+const {Post, TechTag, Project} = require('../../models/');
 const withAuth = require('../../utils/auth')
 
 //NEW POST
@@ -29,6 +29,25 @@ router.post('/', withAuth, async (req, res) => {
         res.render('dashboard', { 
             loggedIn: req.session.loggedIn
         }))
+    } catch (err) {
+        console.log(err);
+        res.status(400).json(err);
+    }
+});
+
+router.post('/project', async (req, res) => {
+    try {
+        const newProjectData = await Project.create({
+            title: req.body.title,
+            projectdescription: req.body.projectdescription,
+            budget: req.body.budget,
+            deadline: req.body.deadline,
+            user_id: req.body.userId,
+        })
+       res.status(200).json(newProjectData)
+        // res.render('dashboard', { 
+        //     loggedIn: req.session.loggedIn
+    // })
     } catch (err) {
         console.log(err);
         res.status(400).json(err);
