@@ -158,6 +158,21 @@ a{
     right:10px;
 }
 
+/* DASHBOARD STYLING */
+.delete-button{
+    position: absolute;
+    right:-12.5px;
+    top:-12.5px;
+    width:25px;
+    height: 25px;
+    background: var(--clr-primary-500);
+    border:3px solid var(--clr-dark);
+    border-radius: 100%;
+}
+/* #close-event{
+    height:20px;
+    width:20px;
+} */
 
 
 
