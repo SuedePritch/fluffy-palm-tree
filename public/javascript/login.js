@@ -21,7 +21,7 @@ const login = async (event) => {
 
         if (response.ok) {
             if(isDev){
-                document.location.replace('/project');
+                document.location.replace('/dashboard');
             }else{
                 document.location.replace('/postings');
             }

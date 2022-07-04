@@ -42,7 +42,7 @@ router.post('/project', async (req, res) => {
             projectdescription: req.body.projectdescription,
             budget: req.body.budget,
             deadline: req.body.deadline,
-            user_id: req.body.userId,
+            user_id: req.session.userId,
         })
        res.status(200).json(newProjectData)
         // res.render('dashboard', { 
@@ -63,6 +63,20 @@ router.delete('/:id', async (req, res) => {
                 id: req.params.id 
             }})
         res.status(200).json(deletePost)
+
+    } catch (err) {
+        console.log(err);
+        res.status(400).json(err);
+    }
+});
+// DELETE PROJECT
+router.delete('/project/:id', async (req, res) => {
+    try {
+        const deleteProject = await Project.destroy({where: 
+            { 
+                id: req.params.id 
+            }})
+        res.status(200).json(deleteProject)
 
     } catch (err) {
         console.log(err);

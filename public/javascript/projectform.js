@@ -11,7 +11,7 @@ const project = async (event) => {
                 title:title,
                 projectdescription:projectdescription,
                 budget:budget,
-                deadline: deadline,
+                deadline: deadline
             }),
             headers: {
                 'Content-Type': 'application/json'
