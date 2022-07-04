@@ -10,6 +10,7 @@ router.get('/signup', async (req, res) => {res.render('signup',{loggedIn: req.se
 router.get('/login', async (req, res) => {res.render('login',{loggedIn: req.session.loggedIn});});
 router.get('/projectform', async (req, res) => {res.render('projectform',{loggedIn: req.session.loggedIn});});
 
+//DEVELOPER DASHBOARD
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
     const allUserPostsData = await Post.findAll({
@@ -32,6 +33,26 @@ router.get('/dashboard', withAuth, async (req, res) => {
     // res.status(200).json(allUsersPosts);
     res.render('dashboard', {
         allUsersPosts,
+        loggedIn: req.session.loggedIn
+    })
+    } catch (err) {
+    res.status(500).json(err);
+    }
+});
+
+//CLIENT DASHBOARD
+router.get('/clientdashboard', async (req, res) => {
+    try {
+    const allUserProjectData = await Project.findAll({
+        where:{
+            user_id: req.session.userId
+        }
+    })
+    
+    const allUsersProjects = allUserProjectData.map((project) => project.get({ plain: true }));
+    // res.status(200).json(allUsersProjects);
+    res.render('clientdashboard', {
+        allUsersProjects,
         loggedIn: req.session.loggedIn
     })
     } catch (err) {

@@ -25,7 +25,7 @@ const signup = async (event) => {
 
         if (response.ok) {
             if(isDevRes){
-                document.location.replace('/project');
+                document.location.replace('/dashboard');
             }else{
                 document.location.replace('/postings');
             }
