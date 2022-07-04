@@ -37,6 +37,9 @@ User.init({
         validate: {
             len: [6, 20]
         }
+    },
+    isDev:{
+        type: DataTypes.BOOLEAN
     }
 }, {
     hooks: {
