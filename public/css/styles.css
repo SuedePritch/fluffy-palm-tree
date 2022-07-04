@@ -29,6 +29,7 @@ a{
 
 
 
+
 /* NAV LINKS */
 #logo-image{
     position: absolute;
@@ -45,17 +46,48 @@ a{
     font-size: 1.8em;
 }
 .navlinks{
+    
     position: absolute;
     width:100%;
-    padding:1rem;
+    height: 4em;
     background: var(--clr-gradient);
     border-bottom: 8px solid var(--clr-dark);
     display: flex;
     justify-content: space-between;
     align-items: baseline;
 }
+#hamburger{
+    position: absolute;
+    right:30px;
+    top:10px;
+    
+    z-index:6;
+}
+.navlink{
+    position: relative;
+    z-index: 1;
+    z-index: 2;
+    right:0;
+    flex-direction: column;
+
+    opacity: 0.97;
+    background: var(--clr-primary-500);
+    border:12px solid var(--clr-dark);
+    border-top: none;
+    border-right:none;
+    border-radius: 0 0 0 8px;
+    padding: 3rem 2rem;
+    padding-right: 0;
+
+}
+.visible{
+    display: flex;
+}
+.navlink:not(.visible){
+    display: none;
+}
 .navlink > *{
-    padding: 0 1.5rem;
+    padding: 1rem 1.5rem;
     font-size: clamp(0.5em, 3vw, 1.4em)
 }
 
@@ -97,11 +129,14 @@ a{
 #new-post-button{
     position: fixed;
     background:var(--clr-primary-500);
-    padding: 3rem;
-    border-radius: 25px;
+    padding: 1.5rem;
+    border-radius:100%;
     bottom: 30px;
     right:30px;
     z-index: 2;
+}
+#add-button{
+    transform: rotate(45deg);
 }
 .card-container{
     display: grid;

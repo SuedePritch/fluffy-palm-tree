@@ -8,29 +8,40 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <nav>
-        <div class="navlinks">
-
-            <div class="logogroup">
-                <svg id="logo-image" viewBox="0 0 1000 1000"><path d="M212.815 0L163.043 673.422L899.886 156.92L212.815 0Z" fill="#463700"/><path d="M899.886 156.92L163.043 673.422L884.439 942.675L899.886 156.92Z" fill="#302600"/><path d="M884.439 942.675L163.043 673.422L308.924 1000L884.439 942.675Z" fill="#9F7F01"/><path d="M163.043 673.422L212.815 0L0 530.4L163.043 673.422Z" fill="#C29B00"/><path d="M163.043 673.422L0 530.4L308.924 1000L163.043 673.422Z" fill="#FAC700"/><path d="M899.886 156.92L884.439 942.675L1000 474.812L899.886 156.92Z" fill="black"/><path d="M212.815 0L899.886 156.92L690.503 63.1152L212.815 0Z" fill="#070707"/></svg>
-                {{!-- <img src="/images/logo.png" id="logo-image" alt="Isocahedron Logo"> --}}
-                <h2 id="logo-title">GoldenDevs</h2>
+        <nav>
+            <div class="navlinks">
+                <div class="logogroup">
+                    <svg id="logo-image" viewBox="0 0 1000 1000"><path d="M212.815 0L163.043 673.422L899.886 156.92L212.815 0Z" fill="#463700"/><path d="M899.886 156.92L163.043 673.422L884.439 942.675L899.886 156.92Z" fill="#302600"/><path d="M884.439 942.675L163.043 673.422L308.924 1000L884.439 942.675Z" fill="#9F7F01"/><path d="M163.043 673.422L212.815 0L0 530.4L163.043 673.422Z" fill="#C29B00"/><path d="M163.043 673.422L0 530.4L308.924 1000L163.043 673.422Z" fill="#FAC700"/><path d="M899.886 156.92L884.439 942.675L1000 474.812L899.886 156.92Z" fill="black"/><path d="M212.815 0L899.886 156.92L690.503 63.1152L212.815 0Z" fill="#070707"/></svg>
+                    <h2 id="logo-title">GoldenDevs</h2>
+                </div>
+                <div id="hamburger">
+                    <svg width="30" height="30" viewBox="0 0 200 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Hamburger">
+                        <line id="bottom" x1="5" y1="105" x2="195" y2="105" stroke="black" stroke-width="30" stroke-linecap="round"/>
+                        <line id="middle" x1="5" y1="55" x2="195" y2="55" stroke="black" stroke-width="30" stroke-linecap="round"/>
+                        <line id="top" x1="5" y1="5" x2="195" y2="5" stroke="black" stroke-width="30" stroke-linecap="round"/>
+                        </g></svg>
+                </div>
+                <div class="navlink">
+                    <a href="/postings">Developers</a>
+                    <a href="/project">Projects</a>
+                    <a href="/dashboard">Developer Dashboard</a>
+                    <a href="/clientdashboard">Client Dashboard</a>
+                    {{#if loggedIn}}
+                    <a href="/" id="logout">Logout</a>
+                    {{else}}
+                    <a href="/signup">Sign Up</a>
+                    <a href="/login">Login</a>
+                    {{/if}}
+                </div>
             </div>
-            <div class="navlink">
-                <a href="/postings">Devs</a>
-                <a href="/project">Projects</a>
-                {{#if loggedIn}}
-                <a href="/" id="logout">Logout</a>
-                {{else}}
-                <a href="/login">Login</a>
-                <a href="/signup">Sign Up</a>
-                {{/if}}
-            </div>
-        </div>
-    </nav>
-    <main>
-        {{{body}}}
-    </main>
+        </nav>
+    <div id="overall-container">
+        <main>
+            {{{body}}}
+        </main>
+    </div>
+    <script src="/javascript/main.js"></script>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
