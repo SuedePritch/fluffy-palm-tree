@@ -1,17 +1,13 @@
-<a href="/postform" id="new-post-button">NEW POST</a>
+<div class="container card-container">
+<a href="/projectform" id="new-post-button">NEW PROJECT</a>
     {{#each projects as |project|}}
     <a class="card" target="_blank">
         <div class="title"  id={{project.id}}>
             <p id="title-text">{{project.title}}</p>
-
         </div>
+                <p class="content-text" id="deadline-text">{{project.deadline}}</p>
                 <p class="content-text" id="desc-text">{{project.description}}</p>
-            {{!-- <div class="tech-container">
-                {{#each tags as |tag|}}
-                <img src={{tag.tech_icon}} id="tech-icon">
-                {{/each}}
-            </div> --}}
-                {{!-- <p id="username-text">{{post.user.username}}</p> --}}
                 <p class="content-text" id="rate-text">${{project.budget}}</p>
     </a>
     {{/each}}
+</div>
