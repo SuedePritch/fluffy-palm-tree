@@ -54,7 +54,7 @@ router.get('/postings', async (req, res) => {
         });
     });
 
-    router.get('/project', async (req, res) => {
+    router.get('/project', withAuth, async (req, res) => {
         const projectData = await Project.findAll({include: [   {   model: User,attributes: ['isDev'], },],})
         .catch((err) => { 
             
