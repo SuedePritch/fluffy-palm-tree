@@ -41,7 +41,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 //CLIENT DASHBOARD
-router.get('/clientdashboard', async (req, res) => {
+router.get('/clientdashboard', withAuth, async (req, res) => {
     try {
     const allUserProjectData = await Project.findAll({
         where:{
@@ -75,7 +75,7 @@ router.get('/postings', async (req, res) => {
         });
     });
 
-    router.get('/project', async (req, res) => {
+    router.get('/project', withAuth, async (req, res) => {
         const projectData = await Project.findAll({include: [   {   model: User,attributes: ['isDev'], },],})
         .catch((err) => { 
             
