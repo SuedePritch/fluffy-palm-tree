@@ -7,7 +7,7 @@ async function deleteProject(event) {
         if (response.ok) {
         document.location.replace('/clientdashboard')
         } else {
-        alert('delete failed');
+        console.log('delete failed');
         }
 }
 const deleteButton = document.querySelectorAll('.delete-button');
