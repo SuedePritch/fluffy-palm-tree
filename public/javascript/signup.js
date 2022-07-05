@@ -18,17 +18,13 @@ const signup = async (event) => {
                 'Content-Type': 'application/json'
             }
         });
-       // Grabs response object
-        const isDeveloperHelper = await response.json();
-        //Grabs isDev from response object
-        const isDevRes = isDeveloperHelper.isDev
+    //    // Grabs response object
+    //     const isDeveloperHelper = await response.json();
+    //     //Grabs isDev from response object
+    //     const isDevRes = isDeveloperHelper.isDev
 
         if (response.ok) {
-            if(isDevRes){
-                document.location.replace('/postings');
-            }else{
-                document.location.replace('/project');
-            }
+                document.location.replace('/login');
         } else {
             alert('log in failed!');
         }

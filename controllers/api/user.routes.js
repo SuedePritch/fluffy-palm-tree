@@ -26,7 +26,7 @@ router.post('/signup', async (req, res) => {
     });
     req.session.save(() => {
         req.session.loggedIn = true;
-        res.status(200).json('You are now signed up!');
+        res.status(200).json();
         
     })
     } catch (err) {
