@@ -35,7 +35,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-router.post('/project', async (req, res) => {
+router.post('/project', withAuth, async (req, res) => {
     try {
         const newProjectData = await Project.create({
             title: req.body.title,
@@ -44,10 +44,10 @@ router.post('/project', async (req, res) => {
             deadline: req.body.deadline,
             user_id: req.session.userId,
         })
-        res.status(200).json(newProjectData)
-        // res.render('dashboard', { 
-        //     loggedIn: req.session.loggedIn
-    // })
+        // res.status(200).json(newProjectData)
+        res.render('dashboard', { 
+            loggedIn: req.session.loggedIn
+    })
     } catch (err) {
         console.log(err);
         res.status(400).json(err);
