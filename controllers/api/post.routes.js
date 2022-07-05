@@ -35,7 +35,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-router.post('/project', async (req, res) => {
+router.post('/project', withAuth, async (req, res) => {
     try {
         const newProjectData = await Project.create({
             title: req.body.title,
@@ -56,7 +56,7 @@ router.post('/project', async (req, res) => {
 
 
 // DELETE POST
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const deletePost = await Post.destroy({where: 
             { 
@@ -70,7 +70,7 @@ router.delete('/:id', async (req, res) => {
     }
 });
 // DELETE PROJECT
-router.delete('/project/:id', async (req, res) => {
+router.delete('/project/:id', withAuth, async (req, res) => {
     try {
         const deleteProject = await Project.destroy({where: 
             { 

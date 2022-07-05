@@ -41,7 +41,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 //CLIENT DASHBOARD
-router.get('/clientdashboard', async (req, res) => {
+router.get('/clientdashboard', withAuth, async (req, res) => {
     try {
     const allUserProjectData = await Project.findAll({
         where:{
