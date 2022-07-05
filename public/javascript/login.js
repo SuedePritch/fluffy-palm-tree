@@ -21,9 +21,9 @@ const login = async (event) => {
 
         if (response.ok) {
             if(isDev){
-                document.location.replace('/postings');
-            }else{
                 document.location.replace('/project');
+            }else{
+                document.location.replace('/postings');
             }
         } else {
             alert('log in failed!');
