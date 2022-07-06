@@ -3,7 +3,7 @@
 ### Description
 This app is a full stack app with that allows freelance developers to advertise their services
 
-[Live Site](https://goldendevs.herokuapp.com/)
+[Live Site](https://protected-peak-08029.herokuapp.com/)
 ### Installation
 install dependancies
 
@@ -42,3 +42,15 @@ This was a collaborative project by:
 * Sequalize
 * Handlebars
 * Three JS
+
+---
+![](homepage_screenshot.png) 
+---
+
+![](developers_screenshot.png) 
+---
+
+![](newad_screenshot.png) 
+---
+
+![](projects_screenshot.png) 
